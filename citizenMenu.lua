@@ -12,6 +12,7 @@ end
 local defaultSample = {
   ['Title'] = 'Menu Personnel',
   ['Items'] = {
+    {['Title'] = "Appeler un mécanicien", ["Event"] = "repairman:callRepairman"},
     {['Title'] = "Fermer"}
   }
 }
