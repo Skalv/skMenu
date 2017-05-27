@@ -11,9 +11,9 @@ end
 -- Create player menu on F6 --
 local defaultSample = {
   ['Title'] = 'Menu Personnel',
-  ['onpenKey'] = 167,
   ['Items'] = {
     {['Title'] = "Fermer"}
   }
 }
-local defaultMenu = Menu(defaultSample)
+local defaultMenu = Menu(defaultSample, 167)
+defaultMenu:start()
