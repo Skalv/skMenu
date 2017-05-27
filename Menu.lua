@@ -3,7 +3,6 @@ Menu.__index = Menu
 
 setmetatable(Menu, {
 	__call = function(self, sample, openKey)
-    Citizen.Trace("Cration du menu" .. sample.Title)
     local mn = {}
 
     mn.item = sample
@@ -62,12 +61,14 @@ function initText(textColor, font, scale)
 end
 
 function Menu:start()
-  Citizen.Trace("Start")
   Citizen.CreateThread(function()
     while true do
       Citizen.Wait(1)
       if self.keyOpenMenu ~= nil then
         if IsControlJustPressed(1, self.keyOpenMenu) then
+          if not self.isOpen then
+            self:initMenu()
+          end
           self.isOpen = not self.isOpen
         end
       end
